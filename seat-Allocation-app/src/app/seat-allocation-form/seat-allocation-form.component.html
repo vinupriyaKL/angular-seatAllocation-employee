@@ -1,0 +1,55 @@
+<div class="container">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)"> 
+        <div class="form-group">
+      <label for="empId">Employee Id</label>
+      <div class="col-sm-5">
+        <input type="text" class="form-control" id="empId" [ngModelOptions]="{standalone: true}" [(ngModel)]="seatAllocation.empId">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="empName">Employee Name</label>
+      <div class="col-sm-5">
+        <input type="text" class="form-control" id="empName" [ngModelOptions]="{standalone: true}" [(ngModel)]="seatAllocation.empName">
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="empBuildingNo" class="col-sm-2">Building No</label>
+         <div class="col-sm-5">
+        <!-- <input type="text" class="form-control" id="empBuildingNo" [ngModelOptions]="{standalone: true}" [(ngModel)]="seatAllocation.buildingNo"> -->
+        <select class="form-control" id="empBuildingNo" [ngModelOptions]="{standalone: true}" [(ngModel)]="seatAllocation.buildingNo">
+            <option *ngFor="let type of buildingArray | async">{{type}}</option>
+        </select>
+      </div>
+    </div>
+      <div class="form-group">
+        <label for="floorNo" class="col-sm-2">Floor No</label>
+        <div class="col-sm-5">
+            <select class="form-control" id="floorNo" [ngModelOptions]="{standalone: true}" [(ngModel)]="seatAllocation.floorNo">
+                <option *ngFor="let type of floorArray | async">{{type}}</option>
+            </select>       
+         </div>
+      </div>
+
+      <div class="form-group">
+        <label for="seatNo">Seat No</label>
+        <div class="col-sm-5">
+            <select class="form-control" id="seatNo" [ngModelOptions]="{standalone: true}" [(ngModel)]="seatAllocation.seatNo">
+                <option *ngFor="let type of seatArray | async">{{type}}</option>
+            </select> 
+                </div>
+      </div>
+
+      <div class="form-group">
+        <label for="projectCode">Project Code</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="projectCode" [ngModelOptions]="{standalone: true}" [(ngModel)]="seatAllocation.projectCode">
+        </div>
+      </div>
+
+      <div *ngIf="postError" class="alert alert-danger">{{errorText}}</div>
+    <div>
+        <button class="btn btn-primary">Allocate </button>
+    </div>
+  </form>
+<router-outlet></router-outlet>  
+</div>

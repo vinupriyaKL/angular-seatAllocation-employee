@@ -1,0 +1,42 @@
+<div class='card'>
+    <div class='card-header'>
+      Allocation list
+    </div>
+   
+    <div class='card-body'>
+      
+     
+      <div class='table-responsive'>
+        <table class='table'
+               *ngIf='employeeAllocationList'>
+          <thead>
+            <tr>
+              
+              <th>Employee Name</th>
+              <th>Employee Id</th>
+              <th>Project code</th>
+              <th>Building No</th>
+              <th>Floor No</th>
+              <th>Seat No</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let seat of employeeAllocationList'>
+              
+             
+              <td>{{ seat.empName }}</td>
+              <td>{{ seat.empId }}</td>
+              <td>{{ seat.projectCode }}</td>
+              <td>{{ seat.buildingNo }}</td>
+              <td>{{ seat.floorNo }}</td>
+              <td>{{ seat.seatNo }}</td>
+
+             
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

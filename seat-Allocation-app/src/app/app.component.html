@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Link to Listing Screen</h5>
+        <p class="card-text">on click of Listing button,it will navigate to listing screen which lists the entire details of allocation</p>
+        <a routerLink ="listing">
+
+          <button class="btn btn-primary" data-toggle="collapse" >Listing</button></a>      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Link to Registration Form</h5>
+        <p class="card-text">On click of Register button,page will navigate to registration form,where we can allocate seats to employees</p>
+        <a routerLink ="register">
+
+          <button class="btn btn-primary" data-toggle="collapse" >Register</button></a>      </div>
+    </div>
+  </div>
+</div>
+  <router-outlet></router-outlet>
